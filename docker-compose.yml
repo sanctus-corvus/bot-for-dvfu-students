@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  python-bot:
+    build: .
+    container_name: python-telegram-bot
+    restart: always
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      GISMETEO_API_TOKEN: ${GISMETEO_API_TOKEN}
+    volumes:
+      - botdata:/app/
+    networks:
+      - botnet
+
+volumes:
+  botdata:
+
+networks:
+  botnet:

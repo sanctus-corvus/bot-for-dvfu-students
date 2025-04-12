@@ -1,0 +1,4 @@
+pyTelegramBotApi
+requests
+geopy
+PyYAML
